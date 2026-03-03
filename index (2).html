@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML FORM</title>
+    <style>
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .form-row label {
+            width: 130px;
+
+        }
+
+        input {
+            background-color: #b4b1b1;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#", name="f">
+
+        <h3>HTML Form</h3>
+        
+        <div class="form-row">
+            <label for="">Name:</label>
+            <input type="text" name="n" id=""><br><br>
+        </div>
+        <div class="form-row">
+            <label for=""> Date of Birth:</label> <input type="text" name="" id=""><br><br>
+        </div>
+        <div class="form-row" >
+            <label for=""> Email Id:</label><input type="email" name ="addres" id=""> <br><br>
+        </div>
+        <div class="form-row"><label for=""> Phone Number:</label><input type="number" name="" id=""></div> <br>
+        <input style="padding: 10px 20px 10px 20px; font-weight: 600;" onclick="Info()" type="submit" name="" id="">
+        <input style="padding: 10px 25px 10px 25px; margin-left: 20px; font-weight: 600;" type="reset" name="" id="">
+
+    </form>
+
+    <script>
+        function Info() {
+            name = document.f.n.value;
+            const addres = document.f.addres.value
+
+            let store=window.open("", "", "width=400px, height=400px");
+            store.document.writeln(name+"<br>");
+            store.document.writeln(addres)
+        }
+    </script>
+
+</body>
+
+</html>
