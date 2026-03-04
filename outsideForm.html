@@ -20,7 +20,7 @@
         <div>Email<br />
             <textarea name="txtEmail"></textarea>
         </div>
-        <div>Courses
+        <div>Courses:
             <select name="option" id="">
                 <option name="option" value="HTML">HTML</option>
                 <option name="option" value="CSS">CSS</option>
@@ -38,19 +38,22 @@
 
 
         </div>
-         <div>Subject<br />
+         <div>Subject:
             English<input type="checkbox" value="English" name="chkSubject" />
             Bengali<input type="checkbox" value="Bengali" name="chkSubject" />
 
             Math<input type="checkbox" value="Math" name="chkSubject" />
         </div>
         <div>
-            <div>Gender<br />
+            <div>Gender:
                 Male<input type="radio" name="gender" value="Male" />
                 Female<input type="radio" name="gender" value="Female" />
             </div>
             <input type="button" onclick="dyn_window()" value="Submit" />
         </div>
+
+        
+        
 
        
     </form>
@@ -60,18 +63,22 @@
             var address = document.form.txtAddress.value;
             var email = document.form.txtEmail.value;
 
-            var Gender = "";
+           
             let Courses = document.form.option.value;
-            let subject=" ";
+           
 
 
             // cheked for gender elements
+             var Gender = "";
             for (i = 0; i < document.form.gender.length; i++) {
                 if (document.form.gender[i].checked) {
                     Gender = document.form.gender[i].value;
                 }
 
             }
+
+            // subject value checked and store data in another window
+             let subject=" ";
             for (j = 0; j < document.form.chkSubject.length; j++) {
 
                 if (document.form.chkSubject[j].checked) {
@@ -86,7 +93,11 @@
             doc.document.write("Email:" + email + "<br>")
             doc.document.write("Gender:" + Gender + "<br>")
             doc.document.write("Course:" + Courses + "<br>")
-            doc.document.write("Subject:"+subject+"<br/></div>");
+            doc.document.write("Subject:"+subject+"<br/>");
+            doc.document.write("<input type='button' value='Close me' onclick='self.close();' />");
+    
+            doc.document.write("<input type='button' value='Print' onclick='self.print();' />");
+
 
            
 
