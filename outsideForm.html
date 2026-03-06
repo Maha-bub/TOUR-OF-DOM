@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form open in new window</title>
+</head>
+
+<body>
+    <form action="#" name="form" style="width:200px; margin:0px auto; border:1px solid gray; padding:10px">
+
+        <div>Name<br />
+            <input type="text" name="txtName" />
+        </div>
+
+        <div>Address<br />
+            <textarea name="txtAddress"></textarea>
+        </div>
+        <div>Email<br />
+            <textarea name="txtEmail"></textarea>
+        </div>
+        <div>Courses:
+            <select name="option" id="">
+                <option name="option" value="HTML">HTML</option>
+                <option name="option" value="CSS">CSS</option>
+                <option name="option" value="JavaScript">JavaScript</option>
+                <option name="option" value="PHP">PHP</option>
+                <option name="option" value="Laravel">Laravel</option>
+            </select>
+
+            <!-- <select name="txtCourse">
+                <option value="MBA">MBA</option>
+                <option value="BBA">BBA</option>
+                <option value="CIS">CIS</option>
+                <option value="EEE">EEE</option>
+            </select> -->
+
+
+        </div>
+         <div>Subject:
+            English<input type="checkbox" value="English" name="chkSubject" />
+            Bengali<input type="checkbox" value="Bengali" name="chkSubject" />
+
+            Math<input type="checkbox" value="Math" name="chkSubject" />
+        </div>
+        <div>
+            <div>Gender:
+                Male<input type="radio" name="gender" value="Male" />
+                Female<input type="radio" name="gender" value="Female" />
+            </div>
+            <input type="button" onclick="dyn_window()" value="Submit" />
+        </div>
+
+        
+        
+
+       
+    </form>
+    <script language="javascript">
+        function dyn_window() {
+            var name = document.form.txtName.value;
+            var address = document.form.txtAddress.value;
+            var email = document.form.txtEmail.value;
+
+           
+            let Courses = document.form.option.value;
+           
+
+
+            // cheked for gender elements
+             var Gender = "";
+            for (i = 0; i < document.form.gender.length; i++) {
+                if (document.form.gender[i].checked) {
+                    Gender = document.form.gender[i].value;
+                }
+
+            }
+
+            // subject value checked and store data in another window
+             let subject=" ";
+            for (j = 0; j < document.form.chkSubject.length; j++) {
+
+                if (document.form.chkSubject[j].checked) {
+                    subject += document.form.chkSubject[j].value + ", ";
+                }
+            }
+            // create new window here
+
+            doc = window.open( "","",'width=400px,height=400px',);
+            doc.document.write("Name:" + name + "<br>")
+            doc.document.write("Address:" + address + "<br>")
+            doc.document.write("Email:" + email + "<br>")
+            doc.document.write("Gender:" + Gender + "<br>")
+            doc.document.write("Course:" + Courses + "<br>")
+            doc.document.write("Subject:"+subject+"<br/>");
+            doc.document.write("<input type='button' value='Close me' onclick='self.close();' />");
+    
+            doc.document.write("<input type='button' value='Print' onclick='self.print();' />");
+
+
+           
+
+        }// end the function 
+
+
+    </script>
+</body>
+
+</html>

@@ -26,21 +26,25 @@
 </head>
 
 <body>
-    <form action="#", name="f">
+    <form action="#" , name="form">
 
         <h3>HTML Form</h3>
-        
+
         <div class="form-row">
             <label for="">Name:</label>
-            <input type="text" name="n" id=""><br><br>
+            <input type="text" name="name" id=""><br><br>
         </div>
         <div class="form-row">
-            <label for=""> Date of Birth:</label> <input type="text" name="" id=""><br><br>
+            <label for=""> Date of Birth:</label>
+            <input type="text" name="" id=""><br><br>
         </div>
-        <div class="form-row" >
-            <label for=""> Email Id:</label><input type="email" name ="addres" id=""> <br><br>
+        <div class="form-row">
+            <label for=""> Email Id:</label>
+            <input type="email" name="addres" id=""> <br><br>
         </div>
-        <div class="form-row"><label for=""> Phone Number:</label><input type="number" name="" id=""></div> <br>
+        <div class="form-row"><label for=""> Phone Number:</label>
+            <input type="number" name="" id="">
+        </div> <br>
         <input style="padding: 10px 20px 10px 20px; font-weight: 600;" onclick="Info()" type="submit" name="" id="">
         <input style="padding: 10px 25px 10px 25px; margin-left: 20px; font-weight: 600;" type="reset" name="" id="">
 
@@ -48,12 +52,15 @@
 
     <script>
         function Info() {
-            name = document.f.n.value;
-            const addres = document.f.addres.value
+            name = document.form.name.value;
 
-            let store=window.open("", "", "width=400px, height=400px");
-            store.document.writeln(name+"<br>");
+            const addres = document.form.addres.value
+
+            let store = window.open("", "", "width=400px, height=400px");
+            store.document.writeln(name + "<br>");
             store.document.writeln(addres)
+            write("<input type='button' value='Close me' onclick='self.close();' />");
+            write("<input type='button' value='Print' onclick='self.print();' />");
         }
     </script>
 
