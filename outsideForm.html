@@ -66,6 +66,9 @@
             if(name ==""){
                 alert("Please fill-up name field")
             }
+            else if(name.length<4 || name.length >8){
+                alert("Name must be minimum 4 charecter and maximum 8 charecter.")
+            }
 
 
             var address = document.form.address.value;
