@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <form action="#" name="form" style="width:30%; margin:0px auto; border: 2px solid rgb(64, 94, 105); padding:10px">
+    <form action="#" name="form"
+        style="width:30%; border-radius: 10px; margin:0px auto; border: 2px solid rgb(64, 94, 105);background: #8eb5bec1; padding:10px">
 
         <div>Name<br />
 
@@ -62,13 +63,32 @@
     <script language="javascript">
         function newWindow() {
             var name = document.form.Text.value;
+            if(name ==""){
+                alert("Please fill-up name field")
+            }
+            else if(name.length<4 || name.length >8){
+                alert("Name must be minimum 4 charecter and maximum 8 charecter.")
+            }
 
 
             var address = document.form.address.value;
+            if(address ==""){
+                alert("Please fil the field")
+            }
+
+
+            // email validation
             var email = document.form.email.value;
-
-
             let Courses = document.form.option.value;
+            if (email == "") {
+                alert("Email required");
+                return false;
+            }
+
+            if (email.indexOf("@") ==-1  || email.indexOf(".") == -1) {
+                alert("Invalid Email");
+                return false;
+            }
 
 
 
