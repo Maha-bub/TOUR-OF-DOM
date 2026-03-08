@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a comment from input data</title>
+</head>
+<body>
+    <h1>Please add your valuable comment</h1>
+    <div id="post-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit corporis a non voluptatem nostrum rem, impedit provident error, dolores consequatur sapiente debitis blanditiis magnam ex dolore. Animi, illum officiis. Ut quisquam maiores perferendis porro itaque totam magni, enim molestiae rerum.</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam modi odio dolorem error, fugiat consectetur esse eligendi minima impedit, eos natus vel velit voluptates magnam ipsa laborum tempore delectus dolor vitae hic ad libero optio at! Beatae enim quae provident.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment"></textarea> <br>
+        <button id="btn-post">Post</button>
+    </div>
+
+    <script>
+        // step-1: get field from id and applied addeventListner
+        document.getElementById('btn-post').addEventListener('click', function(){
+            const commentBox = document.getElementById('new-comment');
+            const newComment =commentBox.value;
+            const newPost =document.getElementById('post-container') ;
+            // newPost.innerText = newComment;           
+           const p =document.createElement('p');
+           p.innerText=newComment;
+           newPost.appendChild(p);
+           commentBox.value=""
+        })
+    </script>
+</body>
+</html>
