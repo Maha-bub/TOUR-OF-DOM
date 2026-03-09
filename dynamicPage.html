@@ -25,8 +25,9 @@
                 <input type="text" name="name" class="form-control" id="exampleInputText">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" name="email" class="form-label">Email address:</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Email address:</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp">
 
             </div>
 
@@ -75,14 +76,14 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Depertment:</label>
                 <select class="form-select" name="option" aria-label="Default select example">
-                    <option selected>Select Your Depertment</option>
+                    <option name="option" selected>Select Your Depertment</option>
                     <option name="option" value="CSE">CSE</option>
                     <option name="option" value="EEE">EEE</option>
                     <option name="option" value="BBA">BBA</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary" onclick="newWindow()">Submit</button>
+            <button type="button" class="btn btn-primary" onclick="newWindow()">Submit</button>
         </form>
     </div>
 
@@ -95,6 +96,7 @@
             let name = document.form.name.value;
             if (name == "") {
                 alert("Name is required")
+                return false;
             }
             else if (name.length < 4 || name.length > 8) {
                 alert("Name must be minimum 4 charecter and maximum 8 charecter.")
@@ -121,17 +123,17 @@
             let Course = "";
             for (j = 0; j < document.form.Course.length; j++) {
                 if (document.form.Course[j].checked) {
-                    Course += document.form.Course[j].checked.value;
+                    Course += document.form.Course[j].value;
                 }
             }
 
-            newWindow = window.open("", "", 'width=400px,height=400px')
-            newWindow.document.write("Name" + name + "<br>")
-            newWindow.document.write("Name" + email + "<br>")
-            newWindow.document.write("Name" + Course + "<br>")
-            newWindow.document.write("Name" + Gender + "<br>")
-            newWindow.document.write("<input type='button' value='Close me' onclick='self.close();' />");
-            newWindow.document.write("<input type='button' value='Close me' onclick='self.print();' />");
+        let newWindows = window.open("", "", 'width=400px,height=400px')
+            newWindows.document.write("Name: " + name + "<br>")
+            newWindows.document.write("Email: " + email + "<br>")
+            newWindows.document.write("Department: " + Course + "<br>")
+            newWindows.document.write("Gender: " + Gender + "<br>")
+            newWindows.document.write("<input type='button' value='Close me' onclick='self.close();' />");
+            newWindows.document.write("<input type='button' value='Close me' onclick='self.print();' />");
         }
 
 
