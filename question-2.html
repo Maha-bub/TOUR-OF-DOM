@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form open in new window</title>
+</head>
+
+<body>
+    <form action="#" name="form"
+        style="width:30%; border-radius: 10px; margin:0px auto; border: 2px solid rgb(185, 200, 206);background: #8eb5bec1; padding:10px">
+
+        <div>Name<br />
+
+            <input type="text" name="Text" />
+        </div>
+        <br><br>
+
+        <div>Passward<br />
+            <textarea name="text"></textarea>
+        </div>
+        <div>Email<br />
+            <textarea name="email"></textarea>
+        </div>
+        <br><br>
+        <br><br>
+
+
+        <br><br>
+
+        <input type="button" onclick="newWindow()" value="Submit" />
+
+
+    </form>
+    <script language="javascript">
+    
+        function newWindow() {
+
+            var name = document.form.Text.value;
+
+            if (name == "") {
+                alert("Please fill-up name field");
+                return;
+            }
+            
+
+            var email = document.form.email.value;
+
+            if (email == "") {
+                alert("Email required");
+                return;
+            }
+
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                alert("Invalid Email");
+                return;
+            }
+
+            var password = document.form.text.value;
+
+            if (password == "") {
+                alert("Please fill-up password field");
+                return;
+            }
+            else if (password.length < 5 || password.length > 8) {
+                alert("Password must be minimum 5 characters and maximum 8 characters.");
+                return;
+            }
+
+            let doc = window.open("", "", "width=400,height=400");
+
+            doc.document.write("Name: " + name + "<br>");
+            doc.document.write("Password: " + password + "<br>");
+            doc.document.write("Email: " + email + "<br>");
+        }
+
+
+    </script>
+</body>
+
+</html>
