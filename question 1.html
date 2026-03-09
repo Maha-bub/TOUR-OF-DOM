@@ -9,7 +9,7 @@
 
 <body>
     <form action="#" name="form"
-        style="width:30%; border-radius: 10px; margin:0px auto; border: 2px solid rgb(64, 94, 105);background: #8eb5bec1; padding:10px">
+        style="width:30%; border-radius: 10px; margin:0px auto; border: 2px solid rgb(64, 94, 105);background: #e0e685c1; padding:10px">
 
         <div>Name<br />
 
@@ -22,10 +22,7 @@
         </div>
         <br><br>
 
-        <div>Address<br />
-            <textarea name="address"></textarea>
-        </div>
-        <br><br>
+        
 
         <div>Courses:
             <select name="option" id="">
@@ -45,11 +42,10 @@
                 Female<input type="radio" name="gender" value="Female" />
             </div>
         </div>
-        <div>Subject:
-            English<input type="checkbox" value="English" name="chkSubject" />
-            Bengali<input type="checkbox" value="Bengali" name="chkSubject" />
-
-            Math<input type="checkbox" value="Math" name="chkSubject" />
+        <div>Depeartment:
+            CSE<input type="checkbox" value="CSE" name="chkSubject" />
+            EEE<input type="checkbox" value="EEE" name="chkSubject" />
+            BBA<input type="checkbox" value="BBA" name="chkSubject" />
         </div>
         <br>
 
@@ -63,19 +59,13 @@
     <script language="javascript">
         function newWindow() {
             var name = document.form.Text.value;
-            if(name ==""){
+            if (name == "") {
                 alert("Please fill-up name field")
             }
-            else if(name.length<4 || name.length >8){
-                alert("Name must be minimum 4 charecter and maximum 8 charecter.")
-            }
+           
 
 
-            var address = document.form.address.value;
-            if(address ==""){
-                alert("Please fil the field")
-            }
-
+          
 
             // email validation
             var email = document.form.email.value;
@@ -85,7 +75,7 @@
                 return false;
             }
 
-            if (email.indexOf("@") ==-1  || email.indexOf(".") == -1) {
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
                 alert("Invalid Email");
                 return false;
             }
@@ -104,22 +94,19 @@
             }
 
             // subject value checked and store data in another window
-            let subject = " ";
+            let Depeartment = " ";
             for (j = 0; j < document.form.chkSubject.length; j++) {
 
                 if (document.form.chkSubject[j].checked) {
-                    subject += document.form.chkSubject[j].value + ", ";
+                    Depeartment += document.form.chkSubject[j].value + ", ";
                 }
             }
             doc = window.open("", "", 'width=400px,height=400px',);
             doc.document.write("Name:" + name + "<br>")
-            doc.document.write("Address:" + address + "<br>")
             doc.document.write("Email:" + email + "<br>")
-            doc.document.write("Gender:" + Gender + "<br>")
             doc.document.write("Course:" + Courses + "<br>")
-            doc.document.write("Subject:" + subject + "<br/>");
-            doc.document.write("<input type='button' value='Close me' onclick='self.close();' />");
-            doc.document.write("<input type='button' value='Print' onclick='self.print();' />");
+            doc.document.write("Gender:" + Gender + "<br>")
+            doc.document.write("Subject:" + Depeartment + "<br/>");
 
 
 
