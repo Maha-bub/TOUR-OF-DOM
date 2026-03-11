@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding New Post</title>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Rating our Blogs and post a comment.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime
+        exercitationem amet nam tenetur repudiandae animi tempore dolores cum
+        totam, ratione magni, ad voluptas? Tenetur cumque fugit, ad corrupti
+        harum facilis?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut nobis
+        temporibus, ullam quo voluptas corporis eum obcaecati enim blanditiis
+        illo quae dolore, perferendis possimus alias a? Modi nulla libero
+        tempora!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime libero,
+        sequi saepe quasi blanditiis suscipit ipsam aliquid iure amet modi atque
+        dolore quibusdam unde alias exercitationem provident sed. Qui,
+        repudiandae.
+      </p>
+    </div>
+    <textarea name="new-comment" id="new-comment" cols="60" rows="5"></textarea> <br />
+    <button type="submit" value="submit" id="btn-comment" >Submit</button>
+    <script>
+      // step-1:add even Listener to the submit button
+
+      document
+        .getElementById("btn-comment")
+        .addEventListener("click", function () {
+          // step-2:get the comment inside from textarea
+          const commentBox = document.getElementById("new-comment");
+          const inputText = commentBox.value;
+
+          //  console.log(inputText);
+
+
+            //step-3: set the comment inside the comment container.
+        const commentContainer= document.getElementById('container');
+          const p=document.createElement('p');
+          p.innerText=inputText;
+          commentContainer.appendChild(p);
+          commentBox.value="";
+         
+        });
+    </script>
+  </body>
+</html>
