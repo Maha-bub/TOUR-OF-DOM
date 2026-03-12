@@ -7,9 +7,23 @@
 </head>
 <body>
     <h2 id="secret-info">My secret Information</h2>
-    <input type="text" name="secret-messege" id=""> <br> <br>
-    <button id="btn-delete">Delete</button>
+    <input type="text" name="" id="secret-messege"> <br> <br>
+    <button id="btn-delete" disabled>Delete</button>
     <script>
+        document.getElementById('secret-messege').addEventListener('keyup',function(event){
+            const messege=event.target.value;
+           
+            console.log(messege);
+            const deleteButton=document.getElementById('btn-delete');
+            if(messege==='delete'){
+                deleteButton.removeAttribute('disabled');
+                
+            }
+            else{
+                deleteButton.setAttribute('disabled',true);
+            }
+
+        })
         document.getElementById('btn-delete').addEventListener('click',function (){
             const secret=document.getElementById('secret-info');
             secret.style.display='none';
