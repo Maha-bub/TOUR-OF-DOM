@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Or Delete confirmation</title>
+  </head>
+  <body>
+    <h2 id="Reset-item">Please Reset Or Delete Input Fields</h2>
+    <input type="text" name="text" id="field-data" /> <br />
+    <br />
+    <button id="btn-reset" disabled>Reset</button>
+
+    <script>
+      document
+        .getElementById("field-data")
+        .addEventListener("keyup", function (event) {
+          const resetButton = document.getElementById("btn-reset");
+          console.log(resetButton);
+          const data = event.target.value;
+
+          if (
+            data === "delete" ||
+            data == "Delete" ||
+            data == "reset" ||
+            data == "Reset"
+          ) {
+            resetButton.removeAttribute("disabled");
+          }
+        //   else{
+        //     resetButton.setAttribute('disabled' true)
+        //   }
+        });
+
+      document
+        .getElementById("btn-reset")
+        .addEventListener("click", function () {
+          document.getElementById("Reset-item").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
