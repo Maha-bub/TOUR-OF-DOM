@@ -16,9 +16,21 @@
         <li class="item">Optio, numquam nobis.</li>
     </ul>
 
+    <button id="list-item-add">Input</button>
+
     <script>
         const items= document.getElementsByClassName('item');
-        console.log(items);
+        for(const item of items){
+            item.addEventListener('click', function(event){
+                event.target.parentNode.removeChild(event.target);
+            })
+        }
+
+        document.getElementById('list-item-add').addEventListener('click',function(event){
+                const listContainer= document.createElement('li');
+                li.innerText='Brand new item added.'
+                
+        })
     </script>
 </body>
 </html>
