@@ -28,8 +28,11 @@
 
         document.getElementById('list-item-add').addEventListener('click',function(event){
                 const listContainer= document.createElement('li');
-                li.innerText='Brand new item added.'
-                
+                const li=document.createElement('li');
+                li.innerText='Brand new item added.';
+                const listContaier=document.getElementById('list-container');
+                listContaier.appendChild(li);
+
         })
     </script>
 </body>
